@@ -1,0 +1,49 @@
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+
+const Live_score = () => {
+  const [currentMatches, setCurrentMatches] = useState([]);
+
+  async function getMatches() {
+    try {
+      const res = await axios.get(
+        'https://api.cricapi.com/v1/currentMatches?apikey=3237bc85-4417-4f25-8da1-3afd289fb52d&offset=0'
+      );
+      const allmatches = res.data.data || [];
+      const iplmatches = allmatches.filter((m) => m.series_id === 'd5a498c8-7596-4b93-8ab0-e0efc3345312');
+      console.log('Full API Response:', res.data);
+      console.log('All Matches:', allmatches);
+      console.log('IPL Matches:', iplmatches)
+      setCurrentMatches(iplmatches);
+    } catch (error) {
+      console.error('Error fetching data:', error);
+    }
+  }
+
+  useEffect(() => {
+    getMatches();
+  }, []);
+
+  return (
+    <div>
+      <h1>Live Score</h1>
+      <div className="matches">
+        {currentMatches.map((m, i) => (
+          <div className="match" key={i}>
+            <h2>{m.name}</h2>
+            <p>Date: {m.date}</p>
+            {m.score?.map((s, j) => (
+              <div key={j}>
+                <p>Innings: {s.inning}</p>
+                <p>Overs: {s.o}, Runs: {s.r}, Wickets: {s.w}</p>
+              </div>
+            ))}
+            <p>Final Verdict: {m.status}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default Live_score;

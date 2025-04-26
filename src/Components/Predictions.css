@@ -1,0 +1,102 @@
+.predictions-container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.error-message {
+    color: #dc3545;
+    padding: 1rem;
+    margin: 1rem 0;
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.matches-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.prediction-card {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.match-teams {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.team {
+    text-align: center;
+    flex: 1;
+}
+
+.team img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+.vs {
+    font-weight: bold;
+    color: #666;
+    padding: 0 20px;
+}
+
+.probability {
+    font-size: 24px;
+    font-weight: bold;
+    color: #003366;
+    margin-top: 5px;
+}
+
+.prediction-bar {
+    height: 20px;
+    background: #f0f0f0;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+}
+
+.team1-bar {
+    background: #4CAF50;
+    height: 100%;
+    transition: width 0.3s ease;
+}
+
+.team2-bar {
+    background: #2196F3;
+    height: 100%;
+    transition: width 0.3s ease;
+}
+
+.loading, .no-matches {
+    text-align: center;
+    padding: 40px;
+    font-size: 18px;
+    color: #666;
+}
+
+/* Dark mode styles */
+.dark .prediction-card {
+    background: #333;
+    color: white;
+}
+
+.dark .vs {
+    color: #ccc;
+}
+
+.dark .probability {
+    color: #7cb1ff;
+}

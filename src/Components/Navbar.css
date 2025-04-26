@@ -1,0 +1,116 @@
+.navbar{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #fff;
+    padding: 15px 7%;
+    transition: 0.5s;
+}
+.logo{
+    width: 100px;
+    cursor: pointer;
+}
+ul{
+    flex: 1;
+    list-style: none;
+    text-align: center;
+}
+ul li{
+    display: inline-block;
+    margin: 10px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+}
+ul li a {
+    text-decoration: none;
+    color: #242222; 
+    transition: color 0.3s ease;
+}
+ul li a:hover {
+    color: #007bff; 
+}
+.dark ul li a {
+    color: #fff; 
+}
+.dark ul li a:hover {
+    color: #007bff; 
+}
+.toggle-icon{
+    width: 50px;
+    cursor: pointer;
+    margin-left: 40px;
+}
+.search-box{
+    display: flex;
+    align-items: center;
+    background: #242424;
+    padding: 10px 20px;
+    border-radius: 50px;
+}
+.search-box input{
+    padding: 6px;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: #fff;
+    font-size: 18px;
+    max-width: 200px;
+    margin-left: 10px;
+}
+.search-box input::placeholder{
+    color: #fff;
+}
+.search-box img{
+    width: 20px;
+    cursor: pointer;
+}
+.dark .navbar{
+    background: #000;
+    color: #fff;
+}
+.dark .search-box{
+    background: #fff;
+}
+.dark .search-box input{
+    color: #222;
+}
+.dark .search-box input::placeholder{
+    color: #222;
+}
+.matches{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}  
+.match {
+    background-color: white;
+    padding: 20px; 
+    border-radius: 20px;
+    text-align: left; 
+    line-height: 1.6; 
+    font-size: 16px; 
+    margin: 20px;
+    margin-top: 40px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+.match h2 {
+    margin-bottom: 10px; 
+    font-size: 20px; 
+    color: #333; 
+}
+.match p {
+    margin-bottom: 8px; 
+    color: #555; 
+}
+h1 {
+    font-size: 2rem;
+    color: #333;
+    text-align: center;
+    margin-top: 20px;
+    font-weight: bold;
+}
+.dark h1 {
+    color: #fff; /* White color for dark mode */
+}
